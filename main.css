@@ -1,0 +1,68 @@
+.navDefault {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #4a4a4f;
+}
+
+button {
+    border: none;
+    background-color: #0997d3;
+    width: 150px;
+    height: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.dropdownMenu{
+    list-style: none;
+    margin:0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    z-index: -1;    /*The z-index property is responsible for elements stacked upon each other in the third dimension. 
+    So we have our X and our Y coordinates, but these are our Z coordinates.
+So what we want to do to affect this, is we will set the z-index of our dropdown menu to "-1".
+But by setting it to "-1", it will always be lower than other elements that are neighboring it or competing with it for visibility.*/
+    width: 150px;
+    text-align: center;
+    box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2);
+    transform: translateY(-100%); /*It'll be hidden if you use a negative 
+    number -- we're going to translate on the y-axis only. 
+    We don't want to move it out along the x-axis.*/
+    transition: transform .5s;
+}
+
+.dropdownLink {
+    text-decoration: none;
+    display: block;
+    background-color: f9f9f9;
+    color: #4a4a4f;
+    padding: 10px 5px;
+    /*background color will take 0.5 of a second ease-in, ease-out, 
+    and the color change will take 0.5 of a second.*/
+    transition: background-color .5s, ease-in-out, color .5s;
+}
+
+.dropdownLink:hover {
+    color: #fff;
+    background-color: #a0a0a3;
+}
+
+.dropdown {
+    width: 150px;
+    position: relative; /*so it will be relative 
+    to the fixed position of the button itself.*/
+}
+
+.dropdown:hover button {
+    background-color: #018ec5;
+}
+
+.dropdown:hover .dropdownMenu {
+    transform: translateY(0);
+}
